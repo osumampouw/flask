@@ -58,6 +58,7 @@ configure the Flask logger to send you mails for exceptions::
                                    ADMINS, 'YourApplication Failed')
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
+        app.logger.setLevel(logging.WARNING)
 
 So what just happened?  We created a new
 :class:`~logging.handlers.SMTPHandler` that will send mails with the mail
@@ -109,6 +110,7 @@ above, just make sure to use a lower setting (I would recommend
         file_handler = TheHandlerYouWant(...)
         file_handler.setLevel(logging.WARNING)
         app.logger.addHandler(file_handler)
+        app.logger.setLevel(logging.WARNING)
 
 .. _logformat:
 
